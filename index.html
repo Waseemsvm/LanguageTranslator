@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator</title>
+    <!-- include bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- include jquery cdn-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- include font awesome for using icons -->
+    <script src="https://kit.fontawesome.com/4e41f25a84.js" crossorigin="anonymous"></script>
+    <!-- include styes.css -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- include style for the preloader -->
+    <link rel="stylesheet" href="Styles/spinkit.css">
+</head>
+<body>
+
+    <!-- spin kit preloader for the web app -->
+    <div class="spinner-wrapper">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+          </div>
+    </div>
+
+      <!-- main content of the web app -->
+    <div class="container">
+        <div class="main">
+            <div class="row">
+
+                <!-- input field -->
+                <div class="form-floating formControl col-10">
+                    <input type="text"  id="floatingInput" class="form-control input" placeholder="Enter the text">
+                    <label for="floatingInput">Enter the text</label>
+                </div>
+
+                <!-- microphone icon -->
+                <div id="mic" class="fas fa-microphone col-4 text-white bg-primary"></div>              
+            </div>            
+            <div class="row full-width">
+                <div class="d-grid col-md-6 col-sm-6 mx-auto"> 
+                        <select name="language" id="languages">
+                            <option value="" selected disabled>Translate to</option>
+                        </select>
+                </div>
+                <div class="d-grid col-md-6 mx-auto form-floating">
+                    <input type="button" id="translateBtn" class="btn btn-primary btn-block" value="Translate">
+                </div >                
+            </div>            
+            <div class="formControl">
+                <textarea  id="output" class="form-control output" rows="5"> </textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- script for hiding the preloader when the application  has completely loaded -->
+    <script>
+        $(document).ready(function() {
+        //Preloader
+        preloaderFadeOutTime = 500;
+        function hidePreloader() {
+        var preloader = $('.spinner-wrapper');
+        preloader.fadeOut(preloaderFadeOutTime);
+        }
+        hidePreloader();
+        });
+    </script>
+
+    <!-- include the languages.json file stored locally -->
+    <script src="scripts/languages.json"></script>
+    <!-- include the script.js file sotred locally -->
+    <script src="scripts/script.js"></script>
+</body>
+</html>

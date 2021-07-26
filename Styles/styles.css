@@ -1,0 +1,93 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media (min-width: 768px) {
+    .container{
+        margin-top: 200px;
+    }
+    
+    .main{
+        width: 50%;
+        margin: 0 auto;
+    }
+    
+    
+    .formControl{
+        margin: 20px 0;
+    }
+    
+    div.row{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    
+    div.fas{
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        margin-top: 25px;
+    }
+    
+    div.fas:hover{
+        background-color: violet !important;
+    }
+    
+    select, option{
+        width: 100%;
+    }
+        
+}
+
+@media (max-width: 768px) {
+    .container{
+        margin-top: 20vh;
+    }
+
+    .main{
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .formControl{
+        width: 100%;
+    }
+
+    div.row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    div.fas{
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        margin-top: 25px;
+    }
+
+    div.fas:hover{
+        background-color: violet !important;
+    }
+    
+    div.d-grid, select#languages, option{
+        width: 100%;
+    }
+
+    select#languages{
+        padding: 5px;
+        margin-bottom: 20px;
+    }
+}
